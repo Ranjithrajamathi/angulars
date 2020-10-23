@@ -1,0 +1,33 @@
+
+
+   <p>ng  template Using if Else Condition</p>
+   <ng-template [ngIf]="data" [ngIfThen]="usersFoundTemplate" [ngIfElse]="noUsersTemplate">
+
+   </ng-template> 
+
+
+<ng-template  #usersFoundTemplate>
+  <div *ngFor="let datas of data">
+
+    <div [ngSwitch]="datas.gender"> 
+       <div class="maleBoxs" *ngSwitchCase="'m'">
+         {{datas.name}}
+        </div>
+        <div class="femaleBoxs" *ngSwitchCase="'f'">
+          {{datas.name}}
+         </div>
+         <div class="noGenders" *ngSwitchDefault>
+          {{datas.name}}
+         </div>
+    </div>
+    </div>
+</ng-template>
+
+
+<ng-template #noUsersTemplate>
+  <div style="background-color: brown;">
+    No User Found Using no no User Tamplate
+  </div>
+  </ng-template > 
+
+  

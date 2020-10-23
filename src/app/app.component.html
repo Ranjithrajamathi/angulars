@@ -1,0 +1,62 @@
+
+ <app-inputdecoretor testName="{{title}}"></app-inputdecoretor>
+<p *show="display">
+Structural Example
+</p>
+<!-- // Hello Structural Example i am trying    this called Container Ref-->
+
+
+
+<!-- Start from ngIf and ngFor and ngSwitch -->
+
+
+<div *ngIf="users; else noUsersTemplate"> 
+  <!-- <ng-template [ngIf]="users"> -->
+  <!-- Step 1 to check ngIf Working or not -->
+Users are Present
+<div *ngFor="let user of users">
+  <!-- Step2 Check its working or give any value from the inside Condent -->
+
+<!-- {{user.name}} Step 3 -->
+<!-- Step4 Coming Value we switch it -->
+<div [ngSwitch]="user.gender"> 
+   <div class="maleBox" *ngSwitchCase="'m'">
+     {{user.name}}
+    </div>
+    <div class="femaleBox" *ngSwitchCase="'f'">
+      {{user.name}}
+     </div>
+     <div class="noGender" *ngSwitchDefault>
+      {{user.name}}
+     </div>
+</div>
+</div>
+
+<!-- </ng-template> -->
+</div> 
+
+
+ <ng-template #noUsersTemplate>
+No User Found
+</ng-template> 
+
+
+
+  <!-- <app-structdirc>StructDire</app-structdirc> -->
+  <div><a routerLink='app-structdirc'>ngIf Work</a></div>
+  <div><a routerLink='strrictwith'>NgIf Tamplatge</a></div>
+  <div><a routerLink='fortStatement'>NgForStatement</a></div>
+  <div><a routerLink='fortIndex'>For Using Index</a></div>
+  <div><a routerLink='foroddorevent'>For Odd Or Event</a></div>
+  <div><a routerLink='forTemplateRefUseDeirective'>ngFor And NgIf Using Directive</a></div>
+  <div><a routerLink='forTemplateRefUseDeirective'>ngFor And NgIf Using Directive</a></div>
+  <div><a routerLink='forTemplateRefUseDeirective'>ngFor And NgIf Using Directive</a></div>
+  <div><a routerLink='forTemplateRefUseDeirective'>ngFor And NgIf Using Directive</a></div>
+  <div><a routerLink='forTemplateRefUseDeirective'>ngFor And NgIf Using Directive</a></div>
+  <div><a routerLink='forTemplateRefUseDeirective'>ngFor And NgIf Using Directive</a></div>
+  <div><a routerLink='forTemplateRefUseDeirective'>ngFor And NgIf Using Directive</a></div>
+
+
+
+  
+<router-outlet  router></router-outlet>

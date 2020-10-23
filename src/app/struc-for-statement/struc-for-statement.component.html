@@ -1,0 +1,31 @@
+
+
+
+<p>ngFor  template Using for Condition</p>
+<ng-template [ngIf]="test" [ngIfThen]="usersFoundTemplate" [ngIfElse]="noUsersTemplate">
+</ng-template> 
+
+
+<ng-template  #usersFoundTemplate>
+<ng-template ngFor [ngForOf]="test" let-x>
+
+ <div [ngSwitch]="x.gender"> 
+    <div class="maleBo" *ngSwitchCase="'m'">
+      {{x.name}}
+     </div>
+     <div class="femaleBo" *ngSwitchCase="'f'">
+       {{x.name}}
+      </div>
+      <div class="noGende" *ngSwitchDefault>
+       {{x.name}}
+      </div>
+ </div>
+ </ng-template>
+</ng-template>
+
+
+<ng-template #noUsersTemplate>
+<div style="background-color: brown;">
+ngFor  template Using for Condition Not Work
+</div>
+</ng-template > 

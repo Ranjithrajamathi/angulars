@@ -1,0 +1,38 @@
+<p>ng-for-ng-if-and-ng-switch works!</p>
+
+<p>for-indedex works!</p>
+<!-- 
+<button (click)='order()'>Order</button> -->
+
+<!-- For loop using Index based Used -->
+<p>ngFor  template Using for Condition</p>
+<ng-template [ngIf]="data" [ngIfThen]="usersFoundTemplate" [ngIfElse]="noUsersTemplate">
+</ng-template> 
+
+
+<ng-template  #usersFoundTemplate>
+<ng-template  *ngFor ="let datas of data; index as i;first as isFirst; last as isLast even as evenNum; odd as oddNum ">
+    <!-- <ng-template ngFor[ngForOf] ="data" let-datas  let-index="i"; let-first ="isFirst" let-last="isLast" let-even="evenNum" let-odd="oddNum"></ng-template> -->
+
+ <div [ngSwitch]="datas.gender"> 
+    <div class="maleBo" *ngSwitchCase="'m'">
+    First: {{isFirst}} Even:{{evenNum}} Name: {{datas.name}}
+     </div>
+     <div class="femaleBo" *ngSwitchCase="'f'">
+    Index:  {{i}} Odd:{{oddNum}} name:  {{datas.name}}
+      </div>
+      <div class="noGende" *ngSwitchDefault>
+    Last: {{isLast}} Name: {{datas.name}}
+      </div>
+ </div>
+ </ng-template> 
+ </div>
+</ng-template>
+
+
+<ng-template #noUsersTemplate>
+<div style="background-color: brown;">
+Welcome
+</div>
+</ng-template > 
+

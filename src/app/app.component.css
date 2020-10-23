@@ -1,0 +1,14 @@
+.maleBox{
+    background: green;
+    margin: 5px;
+}
+
+.femaleBox{
+    background:rebeccapurple;
+    margin: 5px;
+}
+.noGender{
+    background:yellowgreen;
+    margin: 5px;
+}
+

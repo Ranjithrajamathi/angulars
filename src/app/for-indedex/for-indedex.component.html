@@ -1,0 +1,33 @@
+<p>for-indedex works!</p>
+
+
+<!-- For loop using Index based Used -->
+<p>ngFor  template Using for Condition</p>
+<ng-template [ngIf]="data" [ngIfThen]="usersFoundTemplate" [ngIfElse]="noUsersTemplate">
+</ng-template> 
+
+
+<ng-template  #usersFoundTemplate>
+<div *ngFor ="let datas of data; index as i;first as isFirst; last as isLast" >
+
+ <div [ngSwitch]="datas.gender"> 
+    <div class="maleBo" *ngSwitchCase="'m'">
+     {{isFirst}} {{datas.name}}
+     </div>
+     <div class="femaleBo" *ngSwitchCase="'f'">
+    {{i}}   {{datas.name}}
+      </div>
+      <div class="noGende" *ngSwitchDefault>
+     {{isLast}}  {{datas.name}}
+      </div>
+ </div>
+ </div>
+</ng-template>
+
+
+<ng-template #noUsersTemplate>
+<div style="background-color: brown;">
+ngFor  template Using for Condition Not Work
+</div>
+</ng-template > 
+

@@ -1,0 +1,13 @@
+.maleBo{
+    background:blue;
+    margin: 5px;
+}
+
+.femaleBo{
+    background:firebrick;
+    margin: 5px;
+}
+.noGende{
+    background:orchid;
+    margin: 5px;
+}
